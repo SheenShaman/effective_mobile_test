@@ -60,7 +60,7 @@ def search_contacts(phonebook):
     for contact in phonebook:
         if (query in contact['last_name'].lower() or query in contact['first_name'].lower()
                 or query in contact['middle_name'].lower() or query in contact['organization_name'].lower()
-                or contact['working_phone'] or contact['personal_phone']):
+                or query in contact['working_phone'] or query in contact['personal_phone']):
             found_contacts.append(contact)
     if found_contacts:
         print("Найденные контакты: ")
@@ -88,7 +88,7 @@ def main():
         elif choice == '2':
             add_new_contact(phonebook)
         elif choice == '3':
-            add_new_contact(phonebook)
+            edit_contact(phonebook)
         elif choice == '4':
             search_contacts(phonebook)
         elif choice == '5':
