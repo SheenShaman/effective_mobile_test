@@ -36,6 +36,23 @@ def add_new_contact(phonebook):
     print("Контакт добавлен")
 
 
+def edit_contact(phonebook):
+    """ Изменение существующего контакта """
+    last_name = input("Введите Фамилию контакта, который хотите изменить: ")
+    for contact in phonebook:
+        if contact['last_name'] == last_name:
+            contact['first_name'] = input("Введите новое имя: ")
+            contact['middle_name'] = input("Введите новое отчество: ")
+            contact['organization_name'] = input("Введите новое название организации: ")
+            contact['working_phone'] = input("Введите новый рабочий телефон: ")
+            contact['personal_phone'] = input("Введите новый личный телефон: ")
+            save_phonebook(phonebook)
+            print("Контакт изменен")
+            return
+    else:
+        print("Контакт не найден")
+
+
 def main():
     # Загрузка данных из текстового файла
     phonebook = load_phonebook()
