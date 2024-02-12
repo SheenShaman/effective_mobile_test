@@ -53,6 +53,23 @@ def edit_contact(phonebook):
         print("Контакт не найден")
 
 
+def search_contacts(phonebook):
+    """ Поиск контактов по заданным характеристикам """
+    query = input("Введить запрос по поиску: ").lower()
+    found_contacts = []
+    for contact in phonebook:
+        if (query in contact['last_name'].lower() or query in contact['first_name'].lower()
+                or query in contact['middle_name'].lower() or query in contact['organization_name'].lower()
+                or contact['working_phone'] or contact['personal_phone']):
+            found_contacts.append(contact)
+    if found_contacts:
+        print("Найденные контакты: ")
+        for contact in found_contacts:
+            print(contact)
+    else:
+        print("Контакты не найдены")
+
+
 def main():
     # Загрузка данных из текстового файла
     phonebook = load_phonebook()
@@ -71,10 +88,11 @@ def main():
         elif choice == '2':
             add_new_contact(phonebook)
         elif choice == '3':
-            break
+            add_new_contact(phonebook)
         elif choice == '4':
-            break
+            search_contacts(phonebook)
         elif choice == '5':
+            print("Завершение программы.")
             break
         else:
             print("Некорректный ввод. Попробуйте еще раз")
