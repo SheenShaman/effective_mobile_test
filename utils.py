@@ -1,6 +1,7 @@
 import random
 from main import load_phonebook, save_phonebook
 
+# Списки данных из которых будут генерироваться контакты
 list_last_name = ['Ivanov', 'Petrov', 'Sidorov', 'Smirnov', 'Sokolov', 'Popov', 'Lebedev', 'Morozov', 'Volkov',
                   'Pavlov']
 list_first_name = ['Aleksandr', 'Dmitriy', 'Michail', 'Maksim', 'Mark', 'Artem', 'Ivan', 'Petr', 'Matvei', 'Pavel']
