@@ -28,9 +28,11 @@ def display_contacts(contacts, page, page_size=5):
 
 def add_new_contact(phonebook):
     """ Добавление нового контакта в справочник """
-    contact = {'last_name': input('Введите фамилию: '), 'first_name': input('Введите имя: '),
-               'middle_name': input('Введите отчество: '), 'organization_name': input('Введите название организации: '),
-               'working_phone': input('Введите рабочий телефон: '), 'personal_phone': input('Введите личный телефон: ')}
+    contact = {
+        'last_name': input('Введите фамилию: '), 'first_name': input('Введите имя: '),
+        'middle_name': input('Введите отчество: '), 'organization_name': input('Введите название организации: '),
+        'working_phone': input('Введите рабочий телефон: '), 'personal_phone': input('Введите личный телефон: ')
+    }
     phonebook.append(contact)
     save_phonebook(phonebook)
     print("Контакт добавлен")
@@ -71,7 +73,9 @@ def search_contacts(phonebook):
 
 
 def main():
-    # Загрузка данных из текстового файла
+    """ Запуск консольного меню """
+
+    # Загрузка данных из справочника
     phonebook = load_phonebook()
 
     while True:
